@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useMemo } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createTheme, ThemeProvider, Box } from "@mui/material";
 
-function App() {
+import ChannelDetail from "./components/ChannelDetail";
+import VideoDetail from "./components/VideoDetail";
+import SearchFeed from "./components/SearchFeed";
+import Navbar from "./components/Navbar";
+import Feed from "./components/Feed";
+
+const App = () => {
+  const theme = useMemo(() => createTheme(), []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Box sx={{ backgroundColor: "#000" }}>
+          <Navbar />
+
+          <Routes>
+            <Route path="/" element={<Feed />} />
+            <Route path="/video/:id" element={<VideoDetail />} />
+            <Route path="/channel/:id" element={<ChannelDetail />} />
+            <Route path="/search/:searchTerm" element={<SearchFeed />} />
+          </Routes>
+        </Box>
+      </BrowserRouter>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
