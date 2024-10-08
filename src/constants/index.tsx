@@ -33,7 +33,6 @@ export const categories = [
   { name: "Gym", icon: <FitnessCenter /> },
 ];
 
-export const demoThumbnailUrl = "https://i.ibb.co/G2L2Gwp/API-Course.png";
 export const demoChannelUrl = "/channel/UC_pPmy6BQq-SQnek6gnxAiA";
 export const demoVideoUrl = "/watch?v=dQw4w9WgXcQ";
 export const demoChannelTitle = "Template channel title";

@@ -1,5 +1,5 @@
 import { NavbarContainer, LogoContainer } from "./Navbar.styled";
-import { logo } from "../../utils/constants";
+import { logo } from "../../constants";
 import SearchBar from "../SearchBar";
 
 const Navbar = () => (

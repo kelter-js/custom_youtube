@@ -8,7 +8,7 @@ import {
   demoVideoTitle,
   demoChannelTitle,
   demoChannelUrl,
-} from "../../utils/constants";
+} from "../../constants";
 import { ChannelContainer, VideoMediaImage } from "./VideoCard.styled";
 import { VideoCardProps } from "./types";
 

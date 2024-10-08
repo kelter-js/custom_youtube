@@ -1,6 +1,6 @@
 import { useMemo, FC } from "react";
 
-import { categories } from "../../utils/constants";
+import { categories } from "../../constants";
 import { SidebarProps } from "./types";
 import {
   CategoriesListContainer,

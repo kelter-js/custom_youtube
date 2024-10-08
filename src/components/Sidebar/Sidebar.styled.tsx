@@ -49,6 +49,6 @@ export const CategoryIcon = styled("span", {
 
 export const CategoryName = styled("span", {
   shouldForwardProp: (prop) => prop !== "isSelectedCategory",
-})<{ isSelectedCategory?: boolean }>(({ theme, isSelectedCategory }) => ({
+})<{ isSelectedCategory?: boolean }>(({ isSelectedCategory }) => ({
   opacity: isSelectedCategory ? "1" : "0.8",
 }));
