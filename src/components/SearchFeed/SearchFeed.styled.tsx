@@ -6,3 +6,7 @@ export const SearchFeedContainer = styled(Box)(({ theme }) => ({
   flex: 2,
   padding: theme.spacing(2),
 }));
+
+export const Title = styled("span")`
+  color: var(--bright-red);
+`;

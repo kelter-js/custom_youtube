@@ -5,7 +5,7 @@ export const NavbarContainer = styled(Stack)(({ theme }) => ({
   position: "sticky",
   top: 0,
   justifyContent: "space-between",
-  background: "#000",
+  background: "var(--black)",
   padding: theme.spacing(2),
 }));
 

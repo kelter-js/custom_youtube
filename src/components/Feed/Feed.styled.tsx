@@ -2,7 +2,7 @@ import { styled, Box, Typography } from "@mui/material";
 
 export const SidebarContainer = styled(Box)(({ theme }) => ({
   height: "auto",
-  borderRight: "1px solid #3d3d3d",
+  borderRight: "1px solid var(--dark-grey)",
   paddingLeft: 0,
   paddingRight: 0,
 
@@ -15,7 +15,7 @@ export const SidebarContainer = styled(Box)(({ theme }) => ({
 
 export const Copyright = styled(Typography)`
   margin-top: 12px;
-  color: #fff;
+  color: var(--white);
   text-align: center;
 
   @media screen and (max-width: 800px) {

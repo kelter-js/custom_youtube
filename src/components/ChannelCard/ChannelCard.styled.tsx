@@ -20,7 +20,7 @@ export const CardContainer = styled(CardContent)`
   flex-direction: column;
   justify-content: center;
   text-ling: center;
-  color: #fff;
+  color: var(--white);
 `;
 
 export const CardMediaContainer = styled(CardMedia)(({ theme }) => ({
@@ -28,5 +28,5 @@ export const CardMediaContainer = styled(CardMedia)(({ theme }) => ({
   width: "180px",
   marginBottom: theme.spacing(2),
   borderRadius: "50%",
-  border: "1px solid #e3e3e3",
+  border: "1px solid var(--grey)",
 }));

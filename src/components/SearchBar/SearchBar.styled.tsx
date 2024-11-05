@@ -2,7 +2,7 @@ import { styled, Paper, IconButton } from "@mui/material";
 
 export const NavbarContainer = styled(Paper)(({ theme }) => ({
   borderRadius: 20,
-  border: "1px solid #e3e3e3",
+  border: "1px solid var(--grey)",
   paddingLeft: 2,
   boxShadow: "none",
 
@@ -13,7 +13,7 @@ export const NavbarContainer = styled(Paper)(({ theme }) => ({
 
 export const SearchButton = styled(IconButton)`
   padding: 10px;
-  color: red;
+  color: var(--red);
 `;
 
 export const Input = styled("input")`

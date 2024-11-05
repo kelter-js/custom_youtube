@@ -14,7 +14,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Box sx={{ backgroundColor: "#000" }}>
+        <Box bgcolor="var(--black)">
           <Navbar />
 
           <Routes>

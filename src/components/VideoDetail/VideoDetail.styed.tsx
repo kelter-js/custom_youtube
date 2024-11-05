@@ -10,7 +10,7 @@ export const PlayerContainer = styled(Box)`
 export const ChannelContainer = styled(Stack)(({ theme }) => ({
   flexDirection: "row",
   justifyContent: "space-between",
-  color: "#fff",
+  color: "var(--white)",
   padding: `${theme.spacing(1)} ${theme.spacing(2)}`,
 }));
 

@@ -15,7 +15,7 @@ export const CategoryButton = styled("button")`
   margin: 10px 0px;
   border-radius: 20px;
   transition: all 0.3s ease;
-  color: white;
+  color: var(--white);
 
   @media screen and (max-width: 900px) {
     margin: 10px;
@@ -23,11 +23,11 @@ export const CategoryButton = styled("button")`
 
   &:hover {
     background-color: #fc1503 !important;
-    color: white !important;
+    color: var(--white) !important;
   }
 
   &:hover span {
-    color: white !important;
+    color: var(--white) !important;
   }
 `;
 
@@ -43,7 +43,7 @@ export const CategoriesListContainer = styled(Stack)(({ theme }) => ({
 export const CategoryIcon = styled("span", {
   shouldForwardProp: (prop) => prop !== "isSelectedCategory",
 })<{ isSelectedCategory?: boolean }>(({ theme, isSelectedCategory }) => ({
-  color: isSelectedCategory ? "white" : "red",
+  color: isSelectedCategory ? "var(--white)" : "var(--red)",
   marginRight: theme.spacing(2),
 }));
 
