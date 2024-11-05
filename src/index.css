@@ -3,6 +3,15 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  --black: #000;
+  --white: #fff;
+  --red: #ff0000;
+  --grey: #e3e3e3;
+  --dark-grey: #3d3d3d;
+  --bright-red: #fc1503;
+  --teal: rgba(0, 238, 247, 1);
+  --purple: rgba(206, 3, 184, 1);
+  --blue: rgba(0, 212, 255, 1);
 }
 
 a {
