@@ -13,13 +13,18 @@ import {
   MusicNote,
 } from "@mui/icons-material";
 
+export const FALLBACK_CHANNEL_URL = "/channel/UC_pPmy6BQq-SQnek6gnxAiA";
+export const FALLBACK_VIDEO_URL = "/watch?v=dQw4w9WgXcQ";
+export const FALLBACK_CHANNEL_TITLE = "Template channel title";
+export const FALLBACK_VIDEO_TITLE = "Template title";
+export const FALLBACK_PROFILE_PICTURE =
+  "http://dergipark.org.tr/assets/app/images/buddy_sample.png";
+
 export const logo = "https://i.ibb.co/s9Qys2j/logo.png";
 
 export const categories = [
   { name: "New", icon: <Home /> },
   { name: "Coding", icon: <Code /> },
-  { name: "ReactJS", icon: <Code /> },
-  { name: "NextJS", icon: <Code /> },
   { name: "Music", icon: <MusicNote /> },
   { name: "Education", icon: <School /> },
   { name: "Podcast", icon: <GraphicEq /> },
@@ -32,10 +37,3 @@ export const categories = [
   { name: "Comedy", icon: <TheaterComedy /> },
   { name: "Gym", icon: <FitnessCenter /> },
 ];
-
-export const demoChannelUrl = "/channel/UC_pPmy6BQq-SQnek6gnxAiA";
-export const demoVideoUrl = "/watch?v=dQw4w9WgXcQ";
-export const demoChannelTitle = "Template channel title";
-export const demoVideoTitle = "Template title";
-export const demoProfilePicture =
-  "http://dergipark.org.tr/assets/app/images/buddy_sample.png";
