@@ -1,34 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Typography, Stack } from "@mui/material";
 
-import { YouTubeSearchResult } from "../../types";
-import { API } from "../../api";
-
+import { useGetVideolistBySelectedCategory } from "../../hooks/useGetVideolistBySelectedCategory";
+import Sidebar from "../Sidebar";
+import Videos from "../Videos";
 import {
   Copyright,
   SelectedCategoryContainer,
   SidebarContainer,
 } from "./Feed.styled";
-import Sidebar from "../Sidebar";
-import Videos from "../Videos";
+import { Title } from "../SearchFeed/SearchFeed.styled";
 
 const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState("New");
-  const [videos, setVideos] = useState<YouTubeSearchResult[]>([]);
 
   const handleChangeCategory = (newCategory: string) => {
     setSelectedCategory(newCategory);
   };
 
-  useEffect(() => {
-    API.getVideolistBySelectedCategory(selectedCategory)
-      .then((data) => {
-        if (data) {
-          setVideos(data.items);
-        }
-      })
-      .catch((e) => console.log(e));
-  }, [selectedCategory]);
+  const videos = useGetVideolistBySelectedCategory(selectedCategory);
 
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
@@ -42,13 +32,8 @@ const Feed = () => {
       </SidebarContainer>
 
       <SelectedCategoryContainer>
-        <Typography
-          variant="h4"
-          fontWeight="bold"
-          mb={2}
-          sx={{ color: "white" }}
-        >
-          {selectedCategory} <span style={{ color: "#FC1503" }}>videos</span>
+        <Typography variant="h4" fontWeight="bold" mb={2} color="white">
+          {selectedCategory} <Title>videos</Title>
         </Typography>
 
         <Videos videos={videos} />

@@ -1,4 +1,4 @@
-import { useState, FormEventHandler } from "react";
+import { useState, FormEventHandler, ChangeEventHandler } from "react";
 import { useNavigate } from "react-router-dom";
 import { Search } from "@mui/icons-material";
 
@@ -19,13 +19,16 @@ const SearchBar = () => {
     }
   };
 
+  const handleSearch: ChangeEventHandler<HTMLInputElement> = (e) =>
+    setSearchTerm(e.target.value);
+
   return (
     <S.NavbarContainer>
       <form onSubmit={handleSubmit}>
         <S.Input
           placeholder="Search..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={handleSearch}
         />
 
         <S.SearchButton type="submit">

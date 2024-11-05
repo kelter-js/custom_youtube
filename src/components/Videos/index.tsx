@@ -8,7 +8,7 @@ import ChannelCard from "../ChannelCard";
 
 const Videos: FC<VideosProps> = ({ videos, sx = {} }) => {
   if (!videos?.length) {
-    return <Skeleton animation="wave" sx={{ height: "100%", width: "100%" }} />;
+    return <Skeleton animation="wave" height="100%" width="100%" />;
   }
 
   const videosList = useMemo(

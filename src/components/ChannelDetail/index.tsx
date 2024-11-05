@@ -1,40 +1,18 @@
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 
-import { YouTubeSearchResult } from "../../types";
-import { Gradient } from "./ChannelDetail.styled";
-import { API } from "../../api";
+import { useGetChannelData } from "../../hooks/useGetChannelData";
+import { useGetVideosRelatedToChannel } from "../../hooks/useGetVideosRelatedToChannel";
 import ChannelCard from "../ChannelCard";
 import Videos from "../Videos";
+import { Gradient } from "./ChannelDetail.styled";
 
 const ChannelDetail = () => {
   const { id } = useParams();
 
-  const [channelDetail, setChannelDetail] =
-    useState<YouTubeSearchResult | null>(null);
+  const channelDetail = useGetChannelData(id);
 
-  const [videos, setVideos] = useState<YouTubeSearchResult[]>([]);
-
-  useEffect(() => {
-    API.getChannelData(id)
-      .then((data) => {
-        if (data) {
-          setChannelDetail(data?.items[0]);
-        }
-      })
-      .catch((e) => console.log(e));
-  }, [id]);
-
-  useEffect(() => {
-    API.getVideosRelatedToChannel(id)
-      .then((data) => {
-        if (data) {
-          setVideos(data?.items);
-        }
-      })
-      .catch((e) => console.log(e));
-  }, [id]);
+  const videos = useGetVideosRelatedToChannel(id);
 
   return (
     <Box minHeight="95dvh">

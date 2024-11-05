@@ -1,9 +1,10 @@
 import { FC } from "react";
 import { Typography } from "@mui/material";
-import { CheckCircle } from "@mui/icons-material";
+
 import { Link } from "react-router-dom";
 
-import { demoProfilePicture } from "../../constants";
+import { FALLBACK_PROFILE_PICTURE } from "../../constants";
+import { CheckCircle } from "../Common/CheckCircle";
 
 import { ChannelCardProps } from "./types";
 import {
@@ -18,13 +19,13 @@ const ChannelCard: FC<ChannelCardProps> = ({ channelDetail, sx }) => (
       <CardContainer>
         <CardMediaContainer
           image={
-            channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture
+            channelDetail?.snippet?.thumbnails?.high?.url ||
+            FALLBACK_PROFILE_PICTURE
           }
         />
 
         <Typography variant="h6">
-          {channelDetail?.snippet?.title}{" "}
-          <CheckCircle sx={{ fontSize: 14, color: "gray", ml: "5px" }} />
+          {channelDetail?.snippet?.title} <CheckCircle />
         </Typography>
 
         {channelDetail?.statistics?.subscriberCount && (
